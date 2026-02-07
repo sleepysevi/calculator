@@ -1,0 +1,41 @@
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        string repeat = "yes"; 
+
+        while (repeat.ToLower() == "yes")
+        {
+            Console.WriteLine("Enter first number: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter second number: ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            string operation = ""; 
+            bool validOperation = false;
+
+            while (!validOperation)
+            {
+                Console.WriteLine("Choose Operation (+, -, *, /, %, =): ");
+                operation = Console.ReadLine();
+
+                if (operation == "+" || operation == "-" || operation == "*" || operation == "/" || operation == "%" || operation == "=")
+                {
+                    validOperation = true;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect Operation Used, please try again.");
+                }
+            }
+
+            string result = PerformCalculation(num1, num2, operation);
+            DisplayResult(result);
+
+            Console.WriteLine("Do you want to perform another calculation? (yes/no): ");
+            repeat = Console.ReadLine();
+        }
+    }
