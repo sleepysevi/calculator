@@ -1,0 +1,47 @@
+using System;
+
+public static class Calculator
+{
+        private static string PerformCalculation(int num1, int num2, string operation)
+    {
+        string result = "";
+
+        switch (operation)
+        {
+            case "+":
+                result = $"Result: {num1 + num2}";
+                break;
+            case "-":
+                result = $"Result: {num1 - num2}";
+                break;
+            case "*":
+                result = $"Result: {num1 * num2}";
+                break;
+            case "/":
+                if (num2 != 0)
+                {
+                    result = $"Result: {num1 / num2}";
+                }
+                else
+                {
+                    result = "Error: Cannot divide by zero.";
+                }
+                break;
+            case "%":
+                result = $"Result: {num1 % num2}";
+                break;
+            case "=":
+                result = "Operation '=' is not valid for calculation.";
+                break;
+        }
+
+        return result;
+    }
+
+    private static void DisplayResult(string result)
+    {
+        Console.WriteLine(result);
+    }
+    }
+}
+
