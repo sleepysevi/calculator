@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string repeat = "yes"; 
+        string repeat = "yes";
 
         while (repeat.ToLower() == "yes")
         {
@@ -14,7 +14,7 @@ public class Program
             Console.WriteLine("Enter second number: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
 
-            string operation = ""; 
+            string operation = "";
             bool validOperation = false;
 
             while (!validOperation)
@@ -32,10 +32,12 @@ public class Program
                 }
             }
 
-            string result = PerformCalculation(num1, num2, operation);
-            DisplayResult(result);
+            string result = Calculator.PerformCalculation(num1, num2, operation);
+            Calculator.DisplayResult(result);
 
             Console.WriteLine("Do you want to perform another calculation? (yes/no): ");
             repeat = Console.ReadLine();
         }
     }
+}
+
