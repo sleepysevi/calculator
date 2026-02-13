@@ -1,8 +1,6 @@
-using System;
-
 public static class Calculator
 {
-        private static string PerformCalculation(int num1, int num2, string operation)
+    public static string PerformCalculation(int num1, int num2, string operation)
     {
         string result = "";
 
@@ -38,10 +36,8 @@ public static class Calculator
         return result;
     }
 
-    private static void DisplayResult(string result)
+    public static void DisplayResult(string result)
     {
         Console.WriteLine(result);
     }
-    }
 }
-
